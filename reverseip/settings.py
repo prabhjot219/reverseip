@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-n#1u+3d00a=sxgo_50&%&-2uin0hd4&k54h==(5^*j5)n9yerz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'reverse_ip_app'
 ]
 
 MIDDLEWARE = [
@@ -78,9 +79,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'reverseipdb',
         'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': '127.0.0.1',
-        'PORT': '3307',
+        'PASSWORD': 'revip123',
+        'HOST': 'reverseip-db.czyq0mswk7z5.ap-south-1.rds.amazonaws.com',
+        'PORT': '3306',
     }
 }
 
