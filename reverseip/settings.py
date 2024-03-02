@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'reverseipdb',
         'USER': 'root',
         'PASSWORD': 'revip123',
-        'HOST': 'reverseip-db.czyq0mswk7z5.ap-south-1.rds.amazonaws.com',
+        'HOST': 'revip-db.czyq0mswk7z5.ap-south-1.rds.amazonaws.com',
         'PORT': '3306',
     }
 }
