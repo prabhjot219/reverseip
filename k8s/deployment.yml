@@ -25,6 +25,7 @@ metadata:
   name: ipserv-serv
   namespace: revip
 spec:
+  type: NodePort
   selector:
     app: revip
   ports:
@@ -32,3 +33,24 @@ spec:
     protocol: TCP
     port: 80
     targetPort: 8000
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: revip
+  name: revip-ingress
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+spec:
+  ingressClassName: alb
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: ipserv-serv
+            port:
+              number: 80
