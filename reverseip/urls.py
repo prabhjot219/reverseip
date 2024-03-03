@@ -20,5 +20,5 @@ from reverse_ip_app.views import reverse_ip
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('/revip', reverse_ip, name='reverse_ip'),
+    path('revip/', reverse_ip, name='reverse_ip'),
 ]
