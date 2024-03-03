@@ -1,0 +1,28 @@
+replicaCount: 1
+
+image:
+  repository: pk219/revip:latest
+  pullPolicy: IfNotPresent
+
+  tag: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  automount: true
+  annotations: {}
+  name: ""
+
+service:
+  type: NodePort
+  port: 8000
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+

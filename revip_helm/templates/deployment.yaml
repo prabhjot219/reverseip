@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: depl-revip
+  namespace: revip
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: revip
+  template:
+    metadata:
+      labels:
+        app: revip
+    spec:
+      containers:
+      - name: revip
+        image: {{ .Values.image.repository }}
+        ports:
+        - containerPort: {{ .Values.service.port }}

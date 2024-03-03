@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'reverseip.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'reverseipdb',
+        'NAME': 'reverseipdb', 
         'USER': 'root',
-        'PASSWORD': 'revip123',
+        'PASSWORD': 'revip123', # would be added to aws secrets manager in future
         'HOST': 'reverseip-db.czyq0mswk7z5.ap-south-1.rds.amazonaws.com',
         'PORT': '3306',
     }

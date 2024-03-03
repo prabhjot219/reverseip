@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ipserv-serv
+  namespace: revip
+spec:
+  type: {{ .Values.service.type }}
+  selector:
+    app: revip
+  ports:
+  - name: revip
+    protocol: TCP
+    port: 80
+    targetPort: {{ .Values.service.port }}
